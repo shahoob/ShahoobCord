@@ -1,2 +1,4 @@
-# ShahoobCord
+# ShahoobCord ![GitHub package.json version](https://img.shields.io/github/package-json/v/shahoob/ShahoobCord?label=%20&logo=node.js) ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/shahoob/ShahoobCord?include_prereleases&label=%20&logo=github) ![Discord](https://img.shields.io/discord/603294914515566603?label=%20&logo=discord) ![npm](https://img.shields.io/npm/v/shahoobcord?label=%20&logo=npm) ![GitHub package.json dynamic](https://img.shields.io/github/package-json/dependencies/shahoob/ShahoobCord?label=dependencies&logo=Node.js) ![GitHub repo size](https://img.shields.io/github/repo-size/shahoob/ShahoobCord) ![GitHub last commit](https://img.shields.io/github/last-commit/shahoob/ShahoobCord?logo=Github)
 A discord bot.
+
+As of now, it's under development. so be aware of trolls! :trollface:
