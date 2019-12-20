@@ -1,0 +1,2 @@
+# ShahoobCord
+A discord bot.
