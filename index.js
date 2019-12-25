@@ -36,5 +36,8 @@ client.on('message', message => {
 	else if (message.content.startsWith === `${prefix}join-voice`) {
 		client.commands.get('join-voice').exeute(message, args);
 	}
+	else if (message.content.startsWith === `${prefix}kick`) {
+		client.commands.get('kick').exeute(message, args);
+	}
 });
 client.login(process.env.BOT_TOKEN);
