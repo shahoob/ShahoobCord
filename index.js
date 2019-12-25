@@ -1,11 +1,20 @@
+const fs = require('fs');
 const Discord = require('discord.js');
 const client = new Discord.Client();
+client.commands = new Discord.Collection();
 const { prefix } = require('./config.json');
 // eslint-disable-next-line no-unused-vars
 const RichEmbedMInfo = new Discord.RichEmbed()
 	.setColor('#7289DA')
 	.setTitle('User Info')
 	.setDescription('This is an rich embed that has you user info.');
+
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+
+for (const file of commandFiles) {
+	const command = require(`./commands/${file}`);
+	client.commands.set(command.name, command);
+}
 
 client.once('ready', () => {
 	console.log('ShahoobCord Is Online.');
@@ -16,28 +25,16 @@ client.on('message', message => {
 
 	const args = message.content.slice(prefix.length).split(' ');
 	if (message.content.startsWith === `${prefix}ping`) {
-		message.channel.send('Pong.');
+		client.commands.get('ping').exeute(message, args);
 	}
 	else if (message.content.startsWith === `${prefix}beep`) {
-		message.channel.send('Boop.');
+		client.commands.get('beep').exeute(message, args);
 	}
 	else if (message.content.startsWith === `${prefix}user-info`) {
-		RichEmbedMInfo.setAuthor(message.author.avatar, message.author.avatarURL)
-			.addField('Username', message.member.id, true)
-			.addField('User Created at', message.author.createdAt, true)
-			.addField('User\'s Status', message.author.presence.status, true);
-		message.channel.send(RichEmbedMInfo);
-		const RichEmbedMInfo = new Discord.RichEmbed()
-			.setColor('#7289DA')
-			.setTitle('User Info')
-			.setDescription('This is an rich embed that has you user info.');
+		client.commands.get('user-info').exeute(message, args);
 	}
 	else if (message.content.startsWith === `${prefix}join-voice`) {
-		if (message.member.voiceChannel) {
-			message.member.voiceChannel.join().then(connection => {
-				message.reply('Ready to stream some audio!');
-			});
-		}
+		client.commands.get('join-voice').exeute(message, args);
 	}
 });
 client.login(process.env.BOT_TOKEN);
