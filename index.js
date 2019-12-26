@@ -42,5 +42,8 @@ client.on('message', message => {
 	else if (message.content.startsWith === `${prefix}ban`) {
 		client.commands.get('ban').exeute(message, args);
 	}
+	else if (message.content.startsWith === `${prefix}help`) {
+		client.commands.get('help').exeute(message, args);
+	}
 });
 client.login(process.env.BOT_TOKEN);

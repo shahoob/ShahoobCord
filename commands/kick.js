@@ -1,6 +1,7 @@
 module.exports = {
 	name: 'kick',
 	description: 'Kicks a member.',
+	usage: '[command name] [mention name] <reason (to insert spaces, use \',\'\')>',
 	execute(message, args) {
 		const user = message.mentions.users.first();
 		if (user) {
