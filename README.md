@@ -4,7 +4,7 @@ This discord bot's development is CANCELED
 
 ## Resaon
 My discord account is disabled
-for being under 13 years old.
+for `[redacted]`
 
-Poor my discord
 
+now can you leave off of this abandoned bad coffee code
